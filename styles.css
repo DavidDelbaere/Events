@@ -1,0 +1,138 @@
+
+.bg-image{
+    background-image: url('Photos/2025\ christmas.jpeg'); /* Path to your image */
+/* Add the blur effect */
+filter: blur(3px);
+-webkit-filter: blur(3px); /* For Safari */
+/* Full height */
+height: 100%;
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: absolute;
+width: 100%;
+z-index: -1;
+}
+
+.title{
+    position: absolute;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  color: #eaeaea;
+  left: 41%;
+  top: 15%;
+    font-size: 75px;
+    font-weight: 100;
+    animation: float 6s ease-in-out infinite;
+
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.subtitle{
+    position: absolute;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  color: #eaeaea;
+  left: 50%;
+  top: 37.5%;
+    font-size: 25px;
+    font-weight: 100;
+}
+
+
+.fancy-btn {
+  font-family: 'Playfair Display', serif;
+  --color: #eaeaea;
+  position: absolute;
+  overflow: hidden;
+  left: 50%;
+  top: 60%;
+  width: 8em;
+  height: 2.6em;
+  border: 2px solid var(--color);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--color);
+  font-size: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.5s;
+}
+
+.fancy-btn:hover {
+  --color: #ad0b0b;
+}
+
+/* Common circle styling */
+.fancy-btn span {
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  border-radius: 50%;
+  transition: all 0.7s ease;
+}
+
+/* Circle 1 */
+.fancy-btn span:nth-child(1) {
+  height: 500px;
+  width: 500px;
+  top: 100%;
+  left: 100%;
+}
+
+/* Circle 2 */
+.fancy-btn span:nth-child(2) {
+  height: 500px;
+  width: 500px;
+  top: 100%;
+  left: 100%;
+  transition-delay: .1s;
+}
+
+/* Circle 3 */
+.fancy-btn span:nth-child(3) {
+  height: 500px;
+  width: 500px;
+  top: 100%;
+  left: 100%;
+  transition-delay: .2s;
+}
+
+/* Hover animation */
+.fancy-btn:hover span:nth-child(1) {
+  background: #167f01;
+  top: -100px;
+  left: -100px;
+}
+
+.fancy-btn:hover span:nth-child(2) {
+   background: #ad0b0b;
+  top: -100px;
+  left: -100px;
+}
+
+.fancy-btn:hover span:nth-child(3) {
+    background: #e7e7e7;
+  top: -100px;
+  left: -100px;
+}
+
+/* Active state */
+.fancy-btn:active span {
+
+  transition: background 0s;
+}
+
+
