@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     update();
 });
-let clickedCount = 0;
+let clickedCount = 9;
 
 shadowScale = 1;
 
