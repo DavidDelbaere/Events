@@ -33,3 +33,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
     update();
 });
+let clickedCount = 0;
+
+shadowScale = 1;
+
+document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll(".Photo");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+
+            // Prevent double-clicking just in case
+            if (button.disabled) return;
+
+            // Increment global value
+            clickedCount++;
+
+            // Disable button
+            button.disabled = true;
+
+            // Visual feedback
+            button.style.cursor = "default";
+            const ornament = button.closest("span");
+            const shadow = document.querySelector(".shadow");
+            shadowScale += 0.15;
+            shadow.style.transform =
+                `rotateX(90deg) translateZ(-350px) scale(${shadowScale})`;
+            ornament.style.background =
+                "radial-gradient(circle at 20% 30%, #ffffff, #ffee00)";
+
+            // Optional: remove hover effects
+            button.classList.add("clicked");
+
+            if (clickedCount==10){
+                document.body.style.backgroundColor = "#90beff";
+                setTimeout(ending,3000)
+
+            }
+        });
+    });
+});
+
+function ending(){
+    document.getElementById("tree").style.filter = "blur(20px)"
+ document.getElementById("message").classList.add("visible");
+}

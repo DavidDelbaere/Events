@@ -1,5 +1,5 @@
 body {
-    background: #b3eda1;
+    background: #000000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,8 +11,138 @@ body {
     height: 100%;
     margin: 0;
     overflow: hidden;
+    transition: background-color 1s ease-out;
+
 }
 
+.hidden {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 1s ease-out;
+}
+.visible{
+  opacity: 1;
+  z-index: 1;
+
+}
+.title{
+  position: absolute;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  color: #3d3e40;
+  left: -150px;
+  top: -300px;
+    font-size: 75px;
+    font-weight: 100;
+    animation: float 6s ease-in-out infinite;
+}
+.subtitle{
+  position: absolute;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  color: #3d3e40;
+  left: 0px;
+  top: 275px;
+    font-size: 25px;
+    font-weight: 100;
+    animation: float 6s ease-in-out infinite;
+}
+.fancy-btn {
+  font-family: 'Playfair Display', serif;
+  --color: #3d3e40;
+  position: absolute;
+  overflow: hidden;
+  left: 50px;
+  top: 350px;
+  width: 8em;
+  height: 2.6em;
+  border: 2px solid var(--color);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--color);
+  font-size: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.5s;
+}
+
+
+.fancy-btn:hover {
+  --color: #ad0b0b;
+}
+
+/* Common circle styling */
+.fancy-btn span {
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  border-radius: 50%;
+  transition: all 0.7s ease;
+}
+
+/* Circle 1 */
+.fancy-btn span:nth-child(1) {
+  height: 500px;
+  width: 500px;
+  top: 100%;
+  left: 100%;
+}
+
+/* Circle 2 */
+.fancy-btn span:nth-child(2) {
+  height: 500px;
+  width: 500px;
+  top: 100%;
+  left: 100%;
+  transition-delay: .1s;
+}
+
+/* Circle 3 */
+.fancy-btn span:nth-child(3) {
+  height: 500px;
+  width: 500px;
+  top: 100%;
+  left: 100%;
+  transition-delay: .2s;
+}
+
+/* Hover animation */
+.fancy-btn:hover span:nth-child(1) {
+  background: #167f01;
+  top: -100px;
+  left: -100px;
+}
+
+.fancy-btn:hover span:nth-child(2) {
+   background: #ad0b0b;
+  top: -100px;
+  left: -100px;
+}
+
+.fancy-btn:hover span:nth-child(3) {
+    background: #dddddd;
+  top: -100px;
+  left: -100px;
+}
+
+/* Active state */
+.fancy-btn:active span {
+
+  transition: background 0s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 .tree {
     position: relative;
     top: -100px;
@@ -21,7 +151,7 @@ body {
     transform-origin: bottom    ;
     transform-style: preserve-3d;
     transform: rotateX(-10deg) rotateY(calc(var(--k)*1deg));
-
+    transition: filter 1s ease-out;
 }
 .photo{
     cursor: pointer;
@@ -31,7 +161,6 @@ body {
     background: transparent;
     border: transparent;
 }
-
 
 .tree div {
     position: absolute;
@@ -110,4 +239,20 @@ body {
     background: linear-gradient(90deg,#bb4622,#df7214);
     border-bottom: 10px solid #00000019;
     transform: rotateY(calc(90deg*var(--i))) translateZ(30px) ;
+}
+
+.shadow{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;  
+    background: rgb(227, 227, 61);
+    transform-style: preserve-3d;
+    border-radius: 50%;
+    transform: rotateX(90deg) translateZ(-350px) scale(1);
+    transition: transform 0.4s ease-out;
+    filter: blur(20px);
+    transform-origin: center;
+
 }
